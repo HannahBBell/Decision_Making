@@ -8,9 +8,13 @@ export default function FoodChoiceNode() {
     const [proteinScore, setProteinScore] = useState("0")
     const [tasteScore, setTasteScore] = useState("0")
 
+    const [foodNameInput, setFoodNameInput] = useState("") //input of food stored in foodNameInput so can be used for 'winner'
+    
+    const totalScore = +calorieScore + +costScore + +proteinScore + +tasteScore
+
     return(
         <div>
-        <input placeholder="Enter Food Name..."></input> 
+        <input placeholder="Enter Food Name..." onChange={(e)=> setFoodNameInput(e.target.value)}></input> 
         Calories: {calorieScore}
         <input type="range" id="calorieScore" name="calorieScore" onChange={(e)=> setCalorieScore(e.target.value)} value={calorieScore}
          min="0" max="100"/>
@@ -23,7 +27,7 @@ export default function FoodChoiceNode() {
         Taste: {tasteScore}
         <input type="range" id="tasteScore" name="tasteScore" onChange={(e)=> setTasteScore(e.target.value)} value={tasteScore}
          min="0" max="100"/>
-        Total Score: {+calorieScore + +costScore + +proteinScore + +tasteScore}
+        Total Score: {totalScore}
         </div>  
     )
 }
