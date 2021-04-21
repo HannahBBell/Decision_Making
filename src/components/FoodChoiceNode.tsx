@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
-import ReactFlow from 'react-flow-renderer';
 
-export default function FoodChoiceNode() {
+interface IFoodChoiceNode {
+    attributeNameInput: string
+    setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
     const [calorieScore, setCalorieScore] = useState("0")
     const [costScore, setCostScore] = useState("0")
@@ -15,7 +19,7 @@ export default function FoodChoiceNode() {
     return(
         <div>
         <input placeholder="Enter Food Name..." onChange={(e)=> setFoodNameInput(e.target.value)}></input> 
-        Calories: {calorieScore}
+        {props.attributeNameInput}: {calorieScore}
         <input type="range" id="calorieScore" name="calorieScore" onChange={(e)=> setCalorieScore(e.target.value)} value={calorieScore}
          min="0" max="100"/>
         Cost: {costScore}
