@@ -2,16 +2,14 @@ import React from 'react';
 import './App.css';
 import ReactFlow from 'react-flow-renderer';
 import AttributeNode from './components/AttributeNode'
+import FoodChoiceNode from './components/FoodChoiceNode'
+import WinnerNode from './components/WinnerNode'
 
 const elements = [
   {
     id: '1',
     type: 'input', // input node
-    data: { label: 
-      <div>
-        Protein
-      <input placeholder="Enter Attribute..."></input> 
-      </div>},
+    data: { label: <div><WinnerNode/></div>},
     position: { x: 100, y: 25 },
   },
   // default node
@@ -24,12 +22,9 @@ const elements = [
   },
   {
     id: '3',
-    type: 'input', // output node
+    type: 'default', 
     data: { label: 
-      <div>
-        Cost
-      <input placeholder="Enter Attribute..."></input> 
-      </div>},
+      <div><FoodChoiceNode/></div>},
     position: { x: 500, y: 25 },
   },
   {
