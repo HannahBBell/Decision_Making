@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import ReactFlow from 'react-flow-renderer';
-import AttributeNode from './components/AttributeNode'
-import FoodChoiceNode from './components/FoodChoiceNode'
-import WinnerNode from './components/WinnerNode'
-import AddingNodeButtons from './components/AddingNodeButtons'
+import AttributeNode from './components/AttributeNode';
+import FoodChoiceNode from './components/FoodChoiceNode';
+import WinnerNode from './components/WinnerNode';
 
 const elements = [
   {
@@ -33,19 +32,29 @@ const elements = [
   // { id: 'e2-3', source: '2', target: '3' },//solid line
 ];
 
+interface iElements {
+  id: string;
+  type: string;
+  data: {
+    label: JSX.Element;
+  };
+  position: {
+    x: number;
+    y: number;
+  }
+}
 //style={{height:1000}} is the size of the screen
+
+
 function App() {
+
   return (
     <div className="App">
-      <AddingNodeButtons/>
-      <p>Hello</p>
       <div style={{ height: 1000 }}> 
       <ReactFlow elements={elements} />
       </div>
     </div>
   );
 }
-
-
 
 export default App;
