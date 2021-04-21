@@ -4,7 +4,7 @@ interface IFoodChoiceNode {
     attributeNameInput: string
     setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
 }
-
+//still to be done: need to add in attribute names to the correct line 
 export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
     const [calorieScore, setCalorieScore] = useState("0")
