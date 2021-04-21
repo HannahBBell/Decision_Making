@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ReactFlow from 'react-flow-renderer';
+import AttributeNode from './components/AttributeNode'
 
 const elements = [
   {
@@ -9,7 +10,7 @@ const elements = [
     data: { label: 
       <div>
         Protein
-      <input placeholder="Add weighting"></input> 
+      <input placeholder="Enter Attribute..."></input> 
       </div>},
     position: { x: 100, y: 25 },
   },
@@ -18,11 +19,7 @@ const elements = [
     id: '2',
     // you can also pass a React component as a label
     type: 'input',
-    data: { label: 
-      <div>
-        Taste
-      <input placeholder="Add weighting"></input> 
-      </div>},
+    data: { label: <div><AttributeNode/></div>},
     position: { x: 300, y: 25 },
   },
   {
@@ -31,7 +28,7 @@ const elements = [
     data: { label: 
       <div>
         Cost
-      <input placeholder="Add weighting"></input> 
+      <input placeholder="Enter Attribute..."></input> 
       </div>},
     position: { x: 500, y: 25 },
   },
@@ -40,8 +37,7 @@ const elements = [
     type: 'input', // output node
     data: { label: 
       <div>
-        Calories
-      <input placeholder="Add weighting"></input>
+      <input placeholder="Enter Attribute..."></input>
       </div>},
     position: { x: 700, y: 25 },
   },
