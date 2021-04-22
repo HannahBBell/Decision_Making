@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactFlow from 'react-flow-renderer';
 import AttributeNode from './components/AttributeNode';
 import FoodChoiceNode from './components/FoodChoiceNode';
@@ -7,17 +7,6 @@ import "./App.css"
 import 'react-flow-renderer/dist/style.css';
 // import {elements} from './components/Elements'
 
-interface iElements {
-  id: string;
-  type: string;
-  data: {
-    label: JSX.Element;
-  };
-  position: {
-    x: number;
-    y: number;
-  }
-}
 
 function App() {
 
@@ -155,11 +144,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className="title">
+      <h1 className="title">
       Food Decider!
-      </div>
-      <div>
-      <label htmlFor="draggable">
+      </h1>
+      <p className="intro-text">
+        Getting started: Try adding some attributes and foods... 
+        <br/>
+        {/* This tool will calculate the BEST food for you based on your selected attributes */}
+      </p>
+      <p className="tag-line">Decision making made easy! </p>
+      <div className="checkbox">
+        <label htmlFor="draggable">
             <input
               id="draggable"
               type="checkbox"
@@ -167,8 +162,10 @@ function App() {
               onChange={(event) => setIsDraggable(event.target.checked)}
               className="react-flow__draggable"
             />
-            Drag Nodes
-          </label>
+            : Tick to drag nodes
+        </label>
+      </div>
+      <div>
       </div>
       <div style={{ height: 700 }}> 
       <ReactFlow elements={elements} nodesDraggable={isDraggable} snapToGrid={true} style={style}/>

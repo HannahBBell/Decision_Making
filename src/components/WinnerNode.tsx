@@ -14,36 +14,39 @@ interface iWinnerNode{
 
 export default function WinnerNode(props:iWinnerNode) {
 
-    //Math.max(...array1)
     function winnerScore(){
-        debugger
+        const {foodChoice1TotalScore, foodChoice2TotalScore, foodChoice3TotalScore, foodChoice4TotalScore, foodNameInput1, foodNameInput2, foodNameInput3, foodNameInput4} = props;
+        
         let arrayOfScores:number[] = [];
-        //console.log(props.foodChoice2TotalScore)
         let winner = ""
-        arrayOfScores.push(props.foodChoice1TotalScore)
-        arrayOfScores.push(props.foodChoice2TotalScore)
-        arrayOfScores.push(props.foodChoice3TotalScore)
-        arrayOfScores.push(props.foodChoice4TotalScore)
-        //console.log(props.foodChoice1TotalScore)
+
+        arrayOfScores.push(foodChoice1TotalScore)
+        arrayOfScores.push(foodChoice2TotalScore)
+        arrayOfScores.push(foodChoice3TotalScore)
+        arrayOfScores.push(foodChoice4TotalScore)
+        
         const winningScore = (Math.max(...arrayOfScores))
-        console.log(winningScore)
-        if (winningScore === props.foodChoice1TotalScore){
-             winner = props.foodNameInput1
+        
+        if (winningScore === 0){
+            winner = ""
         }
-        else if (winningScore === props.foodChoice2TotalScore){
-            winner = props.foodNameInput2
+        else{
+            if (winningScore === foodChoice1TotalScore){
+                winner = foodNameInput1
+            }
+            else if (winningScore === foodChoice2TotalScore){
+                winner = foodNameInput2
+            }
+            else if (winningScore === foodChoice3TotalScore){
+                winner = foodNameInput3
+            }
+            else if (winningScore === foodChoice4TotalScore){
+                winner = foodNameInput4
+            }
+            return winner
         }
-        else if (winningScore === props.foodChoice3TotalScore){
-            winner = props.foodNameInput3
-        }
-        else if (winningScore === props.foodChoice4TotalScore){
-            winner = props.foodNameInput4
-        }
-        console.log(winner)
-        return winner
     };
 
-    
     return(
         <div>
             Winner

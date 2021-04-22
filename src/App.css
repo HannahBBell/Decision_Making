@@ -12,7 +12,15 @@
     background-color: #E6F2FF;
 }
 
-.react-flow__draggable{
-    font-size: 100px
-   
+.intro-text {
+    text-align: center;
 }
+
+.tag-line {
+    text-align: center;
+}
+
+.checkbox{
+    text-align: center;
+}
+

@@ -12,8 +12,7 @@ interface IFoodChoiceNode {
     weightedInput4:number;
     setFoodNameInput: React.Dispatch<React.SetStateAction<string>>;
     setFoodChoiceTotalScore: React.Dispatch<React.SetStateAction<number>>;
-}
-//still to be done: need to add in attribute names to the correct line 
+} 
 
 export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
@@ -22,8 +21,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     const [attributeScore3, setAttributeScore3] = useState(0)
     const [attributeScore4, setAttributeScore4] = useState(0)
 
-    //Weighted Calculations
-    //does the multiplaction of attribute x weightedInput
+    //Does weighted calcs for each attribute
     function totalScoreOfWeightedAttribute(attributeScore:number, weightedInput:number):number{
         return attributeScore * weightedInput
     }
