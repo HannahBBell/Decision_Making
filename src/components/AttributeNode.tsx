@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./components.css";
 
 interface IAttributeNode {
     setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
@@ -8,7 +9,7 @@ interface IAttributeNode {
 }
 export default function AttributeNode(props:IAttributeNode) {
     return(
-        <div>
+        <div className="attribute-node">
         <input placeholder="Enter Attribute..." onChange={(e)=> props.setAttributeNameInput(e.target.value)} value={props.attributeNameInput}></input> 
         Weighting: {props.weightedInput}
         <input type="range" id="weighting" name="weighting" onChange={(e)=> props.setWeightedInput(e.target.value)} value={props.weightedInput}

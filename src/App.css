@@ -1,0 +1,21 @@
+.title {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 0px;
+    padding-top: 50px;
+    font-size: 40px;
+    font-family: "Verdana";
+}
+
+.App {
+    background-color: #E6F2FF;
+}
+
+/* .react-flow {
+    background: #E6F2FF;
+  }
+
+.react-flow__edge{
+    background-color: blueviolet;
+  } */

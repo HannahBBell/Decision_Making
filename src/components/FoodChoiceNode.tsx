@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import "./components.css";
 
 interface IFoodChoiceNode {
     attributeNameInput1: string;
@@ -32,7 +33,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     useEffect(()=>props.setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores]) //everytime sumWeightedAttributeScore changes, update useState (foodChoiceTotalScore) with current value
 
     return(
-        <div>
+        <div className="foodchoice-node">
         <input placeholder="Enter Food Name..." onChange={(e)=> props.setFoodNameInput(e.target.value)}></input> 
         <br/>
         {props.attributeNameInput1}: {attributeScore1}
