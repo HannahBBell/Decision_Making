@@ -17,7 +17,6 @@ interface iElements {
   }
 }
 
-
 function App() {
 
   //useStates for AttributeNode1
@@ -76,7 +75,6 @@ function App() {
     },
 
     //FoodChoiceNodes
-    //attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}
     {
       id: '5',
       type: 'default', 

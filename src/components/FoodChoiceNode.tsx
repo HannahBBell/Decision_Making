@@ -58,16 +58,3 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
         </div>  
     )
 }
-
-//{numberAttribute1} {numberWeighted1} {sumNumbers} {props.weightedInput1}
-
-
-// const [weightedInput, setWeightedInput] = useState("0")
-
-//     return(
-//         <div>
-//         <input placeholder="Enter Attribute..."></input> 
-//         <input type="range" id="weighting" name="weighting" onChange={(e)=> setWeightedInput(e.target.value)} value={weightedInput}
-//          min="0" max="100"/>
-//         {weightedInput}
-//         </div>  

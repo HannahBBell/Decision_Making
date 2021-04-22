@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import ReactFlow from 'react-flow-renderer';
 
 interface IAttributeNode {
     setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
@@ -8,9 +7,6 @@ interface IAttributeNode {
     weightedInput: string;
 }
 export default function AttributeNode(props:IAttributeNode) {
-    // const [weightedInput, setWeightedInput] = useState("0");
-    // const [attributeNameInput, setAttributeNameInput] = useState("");
-
     return(
         <div>
         <input placeholder="Enter Attribute..." onChange={(e)=> props.setAttributeNameInput(e.target.value)} value={props.attributeNameInput}></input> 
