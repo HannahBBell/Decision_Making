@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 interface IFoodChoiceNode {
     attributeNameInput1: string;
@@ -10,6 +10,7 @@ interface IFoodChoiceNode {
     weightedInput3:string;
     weightedInput4:string;
     setFoodNameInput: React.Dispatch<React.SetStateAction<string>>;
+    setFoodChoiceTotalScore: React.Dispatch<React.SetStateAction<string>>;
 }
 //still to be done: need to add in attribute names to the correct line 
 
@@ -20,18 +21,15 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     const [attributeScore3, setAttributeScore3] = useState("0")
     const [attributeScore4, setAttributeScore4] = useState("0")
 
-    // const [foodNameInput, setFoodNameInput] = useState("") //input of food stored in foodNameInput so can be used for 'winner'
-    
     //Weighted Calculations
-    const sumWeightedAttribute1Score = Number(attributeScore1) * Number(props.weightedInput1)
-    const sumWeightedAttribute2Score = Number(attributeScore2) * Number(props.weightedInput2)
-    const sumWeightedAttribute3Score = Number(attributeScore3) * Number(props.weightedInput3)
-    const sumWeightedAttribute4Score = Number(attributeScore4) * Number(props.weightedInput4)
-    const sumWeightedAttributesScores = ((sumWeightedAttribute1Score + sumWeightedAttribute2Score + sumWeightedAttribute3Score + sumWeightedAttribute4Score).toFixed(1)).toString()
+    //does the multiplaction of attribute x weightedInput
+    function totalScoreOfWeightedAttribute(attributeScore:string, weightedInput:string):number{
+        return Number(attributeScore) * Number(weightedInput)
+    }
+    const sumWeightedAttributeScores = (totalScoreOfWeightedAttribute(attributeScore1, props.weightedInput1) + totalScoreOfWeightedAttribute(attributeScore2, props.weightedInput2) + totalScoreOfWeightedAttribute(attributeScore3, props.weightedInput3) + totalScoreOfWeightedAttribute(attributeScore4, props.weightedInput4)).toFixed(1).toString()
     
-
-    
-    const [totalScore, setTotalScore] = useState("0")
+    //updating totalScore useState
+    useEffect(()=>props.setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores]) //everytime sumWeightedAttributeScore changes, update useState (foodChoiceTotalScore) with current value
 
     return(
         <div>
@@ -56,7 +54,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
         <br/>
         <input type="range" id="tasteScore" name="tasteScore" onChange={(e)=> setAttributeScore4(e.target.value)} value={attributeScore4}
          min="0" max="100"/>
-        Total Score: {sumWeightedAttributesScores} 
+        Total Score: {sumWeightedAttributeScores}
         </div>  
     )
 }
