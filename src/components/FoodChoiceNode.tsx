@@ -31,7 +31,8 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     const sumWeightedAttributeScores = Math.round(((totalScoreOfWeightedAttribute(attributeScore1, weightedInput1) + totalScoreOfWeightedAttribute(attributeScore2, weightedInput2) + totalScoreOfWeightedAttribute(attributeScore3, weightedInput3) + totalScoreOfWeightedAttribute(attributeScore4, weightedInput4)))*100)/100
     
     //updating totalScore useState
-    useEffect(()=>setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores]) //everytime sumWeightedAttributeScore changes, update useState (foodChoiceTotalScore) with current value
+    //everytime sumWeightedAttributeScore changes, update useState (foodChoiceTotalScore) with current value
+    useEffect(()=>setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores])
 
     return(
         <div className="foodchoice-node">

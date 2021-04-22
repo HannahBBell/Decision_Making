@@ -9,6 +9,7 @@ interface IAttributeNode {
 }
 export default function AttributeNode(props:IAttributeNode) {
     const {setAttributeNameInput, attributeNameInput, setWeightedInput, weightedInput} = props;
+    
     return(
         <div className="attribute-node">
         <input placeholder="Enter Attribute..." onChange={(e)=> setAttributeNameInput(e.target.value)} value={attributeNameInput}></input> 
