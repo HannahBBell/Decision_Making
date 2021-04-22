@@ -110,7 +110,7 @@ function App() {
     {
       id: '9',
       type: 'output',
-      data: { label: <div><WinnerNode foodNameInput1={foodNameInput1} foodNameInput2={foodNameInput2} foodNameInput3={foodNameInput3} foodNameInput4={foodNameInput4}/></div>},
+      data: { label: <div><WinnerNode foodNameInput1={foodNameInput1} foodNameInput2={foodNameInput2} foodNameInput3={foodNameInput3} foodNameInput4={foodNameInput4} foodChoice1TotalScore={foodChoice1TotalScore} foodChoice2TotalScore={foodChoice2TotalScore} foodChoice3TotalScore={foodChoice3TotalScore} foodChoice4TotalScore={foodChoice4TotalScore}/></div>},
       position: { x: 400, y: 500 },
     },
     
