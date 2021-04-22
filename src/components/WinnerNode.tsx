@@ -6,10 +6,10 @@ interface iWinnerNode{
     foodNameInput2: string;
     foodNameInput3: string;
     foodNameInput4: string;
-    foodChoice1TotalScore: string;
-    foodChoice2TotalScore: string;
-    foodChoice3TotalScore: string;
-    foodChoice4TotalScore: string;
+    foodChoice1TotalScore: number;
+    foodChoice2TotalScore: number;
+    foodChoice3TotalScore: number;
+    foodChoice4TotalScore: number;
 }
 
 export default function WinnerNode(props:iWinnerNode) {
@@ -20,12 +20,12 @@ export default function WinnerNode(props:iWinnerNode) {
         let arrayOfScores:number[] = [];
         //console.log(props.foodChoice2TotalScore)
         let winner = ""
-        arrayOfScores.push(Number(props.foodChoice1TotalScore))
-        arrayOfScores.push(Number(props.foodChoice2TotalScore))
-        arrayOfScores.push(Number(props.foodChoice3TotalScore))
-        arrayOfScores.push(Number(props.foodChoice4TotalScore))
+        arrayOfScores.push(props.foodChoice1TotalScore)
+        arrayOfScores.push(props.foodChoice2TotalScore)
+        arrayOfScores.push(props.foodChoice3TotalScore)
+        arrayOfScores.push(props.foodChoice4TotalScore)
         //console.log(props.foodChoice1TotalScore)
-        const winningScore = (Math.max(...arrayOfScores)).toString()
+        const winningScore = (Math.max(...arrayOfScores))
         console.log(winningScore)
         if (winningScore === props.foodChoice1TotalScore){
              winner = props.foodNameInput1
@@ -43,13 +43,12 @@ export default function WinnerNode(props:iWinnerNode) {
         return winner
     };
 
-    winnerScore()
     
     return(
         <div>
-        Winner
-        <br/>
-        {winnerScore()}
+            Winner
+            <br/>
+            <div className="winner-name">{winnerScore()}</div>
         </div>  
     )
 }

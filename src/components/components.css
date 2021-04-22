@@ -9,3 +9,8 @@
 .winner-node{
     font-family: "Verdana";
 }
+
+.winner-name{
+    font-size:large;
+    color: rgb(61, 117, 122)
+}

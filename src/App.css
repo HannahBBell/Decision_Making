@@ -12,10 +12,7 @@
     background-color: #E6F2FF;
 }
 
-/* .react-flow {
-    background: #E6F2FF;
-  }
-
-.react-flow__edge{
-    background-color: blueviolet;
-  } */
+.react-flow__draggable{
+    font-size: 100px
+   
+}

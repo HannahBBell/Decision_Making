@@ -22,19 +22,19 @@ interface iElements {
 function App() {
 
   //useStates for AttributeNode1
-  const [weightedInput1, setWeightedInput1] = useState("0");
+  const [weightedInput1, setWeightedInput1] = useState(0);
   const [attributeNameInput1, setAttributeNameInput1] = useState("");
 
   //useStates for AttributeNode2
-  const [weightedInput2, setWeightedInput2] = useState("0");
+  const [weightedInput2, setWeightedInput2] = useState(0);
   const [attributeNameInput2, setAttributeNameInput2] = useState("");
 
   //useStates for AttributeNode3
-  const [weightedInput3, setWeightedInput3] = useState("0");
+  const [weightedInput3, setWeightedInput3] = useState(0);
   const [attributeNameInput3, setAttributeNameInput3] = useState("");
 
   //useStates for AttributeNode4
-  const [weightedInput4, setWeightedInput4] = useState("0");
+  const [weightedInput4, setWeightedInput4] = useState(0);
   const [attributeNameInput4, setAttributeNameInput4] = useState("");
 
   //useStates for FoodChoiceNode 'Food Name' - one for each of 4 FoodChoiceNode(s)
@@ -44,10 +44,10 @@ function App() {
   const [foodNameInput4, setFoodNameInput4] = useState("")
   
   //useStates for FoodChoiceNode 'Total Score' - one for each of 4 FoodChoiceNode(s)
-  const [foodChoice1TotalScore, setFoodChoice1TotalScore] = useState("0")
-  const [foodChoice2TotalScore, setFoodChoice2TotalScore] = useState("0")
-  const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState("0")
-  const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState("0")
+  const [foodChoice1TotalScore, setFoodChoice1TotalScore] = useState(0)
+  const [foodChoice2TotalScore, setFoodChoice2TotalScore] = useState(0)
+  const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState(0)
+  const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState(0)
 
   const elements = [
     //AttributeNodes
@@ -158,8 +158,6 @@ function App() {
       <div className="title">
       Food Decider!
       </div>
-      <div style={{ height: 700 }}> 
-      <ReactFlow elements={elements} nodesDraggable={isDraggable} snapToGrid={true} style={style}/>
       <div>
       <label htmlFor="draggable">
             <input
@@ -172,6 +170,8 @@ function App() {
             Drag Nodes
           </label>
       </div>
+      <div style={{ height: 700 }}> 
+      <ReactFlow elements={elements} nodesDraggable={isDraggable} snapToGrid={true} style={style}/>
       </div>
     </div>
   );
