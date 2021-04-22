@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 
-interface IFoodChoiceNode {
-    attributeNameInput: string
-    setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
-}
+// interface IFoodChoiceNode {
+//     attributeNameInput: string
+//     setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
+// }
 //still to be done: need to add in attribute names to the correct line 
-export default function FoodChoiceNode(props:IFoodChoiceNode) {
+
+//props:IFoodChoiceNode
+export default function FoodChoiceNode() {
 
     const [calorieScore, setCalorieScore] = useState("0")
     const [costScore, setCostScore] = useState("0")
@@ -14,12 +16,14 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
     const [foodNameInput, setFoodNameInput] = useState("") //input of food stored in foodNameInput so can be used for 'winner'
     
-    const totalScore = +calorieScore + +costScore + +proteinScore + +tasteScore
+    const sumScore = +calorieScore + +costScore + +proteinScore + +tasteScore
+    
+    const [totalScore, setTotalScore] = useState("0")
 
     return(
         <div>
         <input placeholder="Enter Food Name..." onChange={(e)=> setFoodNameInput(e.target.value)}></input> 
-        {props.attributeNameInput}: {calorieScore}
+        {/* {props.attributeNameInput}: {calorieScore} */}
         <input type="range" id="calorieScore" name="calorieScore" onChange={(e)=> setCalorieScore(e.target.value)} value={calorieScore}
          min="0" max="100"/>
         Cost: {costScore}
@@ -31,7 +35,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
         Taste: {tasteScore}
         <input type="range" id="tasteScore" name="tasteScore" onChange={(e)=> setTasteScore(e.target.value)} value={tasteScore}
          min="0" max="100"/>
-        Total Score: {totalScore}
+        Total Score: {sumScore}
         </div>  
     )
 }

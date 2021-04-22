@@ -17,9 +17,24 @@ interface iElements {
   }
 }
 
+
 function App() {
-  const [weightedInput, setWeightedInput] = useState("");
-  const [attributeNameInput, setAttributeNameInput] = useState("calories???");
+
+  //useStates for AttributeNode1
+  const [weightedInput1, setWeightedInput1] = useState("");
+  const [attributeNameInput1, setAttributeNameInput1] = useState("");
+
+  //useStates for AttributeNode2
+  const [weightedInput2, setWeightedInput2] = useState("");
+  const [attributeNameInput2, setAttributeNameInput2] = useState("");
+
+  //useStates for AttributeNode3
+  const [weightedInput3, setWeightedInput3] = useState("");
+  const [attributeNameInput3, setAttributeNameInput3] = useState("");
+
+  //useStates for AttributeNode4
+  const [weightedInput4, setWeightedInput4] = useState("");
+  const [attributeNameInput4, setAttributeNameInput4] = useState("");
 
 
   const elements = [
@@ -27,54 +42,56 @@ function App() {
     {
       id: '1',
       type: 'input',
-      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput} attributeNameInput={attributeNameInput} setWeightedInput={setWeightedInput} weightedInput={weightedInput}/></div>},
+      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput1} attributeNameInput={attributeNameInput1} setWeightedInput={setWeightedInput1} weightedInput={weightedInput1}/></div>},
       position: { x: 100, y: 25 },
     },
     {
       id: '2',
       type: 'input',
-      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput} attributeNameInput={attributeNameInput} setWeightedInput={setWeightedInput} weightedInput={weightedInput}/></div>},
+      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput2} attributeNameInput={attributeNameInput2} setWeightedInput={setWeightedInput2} weightedInput={weightedInput2}/></div>},
       position: { x: 300, y: 25 },
     },
     {
       id: '3',
       type: 'input',
-      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput} attributeNameInput={attributeNameInput} setWeightedInput={setWeightedInput} weightedInput={weightedInput}/></div>},
+      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput3} attributeNameInput={attributeNameInput3} setWeightedInput={setWeightedInput3} weightedInput={weightedInput3}/></div>},
       position: { x: 500, y: 25 },
     },
     {
       id: '4',
       type: 'input',
-      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput} attributeNameInput={attributeNameInput} setWeightedInput={setWeightedInput} weightedInput={weightedInput}/></div>},
+      data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput4} attributeNameInput={attributeNameInput4} setWeightedInput={setWeightedInput4} weightedInput={weightedInput4}/></div>},
       position: { x: 700, y: 25 },
     },
     //FoodChoiceNodes
+
+    //attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}
     {
       id: '5',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}/></div>},
+        <div><FoodChoiceNode /></div>},
       position: { x: 100, y: 200 },
     },
     {
       id: '6',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}/></div>},
+        <div><FoodChoiceNode /></div>},
       position: { x: 300, y: 200 },
     },
     {
       id: '7',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}/></div>},
+        <div><FoodChoiceNode /></div>},
       position: { x: 500, y: 200 },
     },
     {
       id: '8',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput={attributeNameInput} setAttributeNameInput={setAttributeNameInput}/></div>},
+        <div><FoodChoiceNode /></div>},
       position: { x: 700, y: 200 },
     },
     //WinnerNode
