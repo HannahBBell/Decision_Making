@@ -141,11 +141,25 @@ function App() {
     { id: 'e8-9', source: '8', target: '9'},
   ];
 
+  //allowing/stopping user from dragging nodes about
+  const [isDraggable, setIsDraggable] = useState(false);
+
   return (
     <div className="App">
-      <div style={{ height: 1000 }}> 
-      <ReactFlow elements={elements} />
-      {/* <FoodChoiceNode setWeightedInput={setWeightedInput}/> */}
+      <div style={{ height: 700 }}> 
+      <ReactFlow elements={elements} nodesDraggable={isDraggable}/>
+      <div>
+      <label htmlFor="draggable">
+            <input
+              id="draggable"
+              type="checkbox"
+              checked={isDraggable}
+              onChange={(event) => setIsDraggable(event.target.checked)}
+              className="react-flow__draggable"
+            />
+            Drag Nodes
+          </label>
+      </div>
       </div>
     </div>
   );
