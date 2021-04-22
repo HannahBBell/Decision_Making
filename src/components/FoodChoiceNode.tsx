@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 
-// interface IFoodChoiceNode {
-//     attributeNameInput: string
-//     setAttributeNameInput: React.Dispatch<React.SetStateAction<string>>;
-// }
+interface IFoodChoiceNode {
+    attributeNameInput1: string;
+    attributeNameInput2: string;
+    attributeNameInput3: string;
+    attributeNameInput4: string;
+}
 //still to be done: need to add in attribute names to the correct line 
 
-//props:IFoodChoiceNode
-export default function FoodChoiceNode() {
+export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
     const [calorieScore, setCalorieScore] = useState("0")
     const [costScore, setCostScore] = useState("0")
@@ -23,16 +24,24 @@ export default function FoodChoiceNode() {
     return(
         <div>
         <input placeholder="Enter Food Name..." onChange={(e)=> setFoodNameInput(e.target.value)}></input> 
-        {/* {props.attributeNameInput}: {calorieScore} */}
+        <br/>
+        {props.attributeNameInput1}: {calorieScore}
+        <br/>
         <input type="range" id="calorieScore" name="calorieScore" onChange={(e)=> setCalorieScore(e.target.value)} value={calorieScore}
          min="0" max="100"/>
-        Cost: {costScore}
+        <br/>
+        {props.attributeNameInput2}: {costScore}
+        <br/>
         <input type="range" id="costScore" name="costScore" onChange={(e)=> setCostScore(e.target.value)} value={costScore}
          min="0" max="100"/>
-        Protein: {proteinScore}
+        <br/>
+        {props.attributeNameInput3}: {proteinScore}
+        <br/>
         <input type="range" id="proteinScore" name="proteinScore" onChange={(e)=> setProteinScore(e.target.value)} value={proteinScore}
          min="0" max="100"/>
-        Taste: {tasteScore}
+        <br/>
+        {props.attributeNameInput4}: {tasteScore}
+        <br/>
         <input type="range" id="tasteScore" name="tasteScore" onChange={(e)=> setTasteScore(e.target.value)} value={tasteScore}
          min="0" max="100"/>
         Total Score: {sumScore}
