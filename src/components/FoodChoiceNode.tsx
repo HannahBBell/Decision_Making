@@ -32,7 +32,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     
     //updating totalScore useState
     //everytime sumWeightedAttributeScore changes, update useState (foodChoiceTotalScore) with current value
-    useEffect(()=>setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores])
+    useEffect(()=>setFoodChoiceTotalScore(sumWeightedAttributeScores), [sumWeightedAttributeScores, setFoodChoiceTotalScore])
 
     return(
         <div className="foodchoice-node">
