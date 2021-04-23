@@ -44,6 +44,10 @@ function App() {
   const winnerNodeFoodNameInputArray = [foodNameInput1, foodNameInput2, foodNameInput3, foodNameInput4];
   const winnerNodeFoodChoiceTotalScoreArray = [foodChoice1TotalScore, foodChoice2TotalScore, foodChoice3TotalScore, foodChoice4TotalScore];
   
+  //attributeNameInput and weightedInput arrays to pass into FoodChoiceNode
+  const foodChoiceNodeAttributeNameInputArray = [attributeNameInput1, attributeNameInput2, attributeNameInput3, attributeNameInput4];
+  const foodChoiceNodeWeightedInputArray = [weightedInput1, weightedInput2, weightedInput3, weightedInput4];
+
   const elements = [
     //AttributeNodes
     {
@@ -72,32 +76,35 @@ function App() {
     },
 
     //FoodChoiceNodes
+  //   const foodChoiceNodeAttributeNameInputArray = [attributeNameInput1, attributeNameInput2, attributeNameInput3, attributeNameInput4];
+  // const foodChoiceNodeWeightedInputArray = [weightedInput1, weightedInput2, weightedInput3, weightedInput4];
+
     {
       id: '5',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput1} setFoodChoiceTotalScore={setFoodChoice1TotalScore} /></div>},
+        <div><FoodChoiceNode foodChoiceNodeAttributeNameInputArray={foodChoiceNodeAttributeNameInputArray} foodChoiceNodeWeightedInputArray={foodChoiceNodeWeightedInputArray} setFoodNameInput={setFoodNameInput1} setFoodChoiceTotalScore={setFoodChoice1TotalScore} /></div>},
       position: { x: width/2 - 410, y: 200 },
     },
     {
       id: '6',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput2} setFoodChoiceTotalScore={setFoodChoice2TotalScore}/></div>},
+        <div><FoodChoiceNode foodChoiceNodeAttributeNameInputArray={foodChoiceNodeAttributeNameInputArray} foodChoiceNodeWeightedInputArray={foodChoiceNodeWeightedInputArray} setFoodNameInput={setFoodNameInput2} setFoodChoiceTotalScore={setFoodChoice2TotalScore} /></div>},
       position: { x: width/2 - 200, y: 200 },
     },
     {
       id: '7',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput3} setFoodChoiceTotalScore={setFoodChoice3TotalScore}/></div>},
+        <div><FoodChoiceNode foodChoiceNodeAttributeNameInputArray={foodChoiceNodeAttributeNameInputArray} foodChoiceNodeWeightedInputArray={foodChoiceNodeWeightedInputArray} setFoodNameInput={setFoodNameInput3} setFoodChoiceTotalScore={setFoodChoice3TotalScore} /></div>},
       position: { x: width/2 + 10, y: 200 },
     },
     {
       id: '8',
       type: 'default', 
       data: { label: 
-        <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput4} setFoodChoiceTotalScore={setFoodChoice4TotalScore}/></div>},
+        <div><FoodChoiceNode foodChoiceNodeAttributeNameInputArray={foodChoiceNodeAttributeNameInputArray} foodChoiceNodeWeightedInputArray={foodChoiceNodeWeightedInputArray} setFoodNameInput={setFoodNameInput4} setFoodChoiceTotalScore={setFoodChoice4TotalScore} /></div>},
       position: { x: width/2 + 220, y: 200 },
     },
 
