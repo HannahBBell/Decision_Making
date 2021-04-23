@@ -1,6 +1,6 @@
-#Decision Making: Food Decider!
+# Decision Making: Food Decider!
 
-##How it works:
+## How it works:
 An interactive tool which helps you determine the best food for you based on a weighted total score.
 All you need to do to get started is:
     1. Add some attributes, assign a weighting to them
@@ -8,10 +8,10 @@ All you need to do to get started is:
     3. BAM! this useful tool spits out the best food based on your choices! 
 It's decision making made easy!
 
-###Link to netlify
+### Link to netlify
 https://decision-making-hbb.netlify.app/
 
-###Demo screenshot: 
+### Demo screenshot: 
 ![image](https://user-images.githubusercontent.com/77231970/115873638-10fd6600-a43b-11eb-9187-cf9fe07ca6f0.png)
 
 # Getting Started with Create React App
