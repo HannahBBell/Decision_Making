@@ -1,4 +1,4 @@
-import {totalScoreOfWeightedAttribute} from "./FoodChoiceNode";
+import { totalScoreOfWeightedAttribute } from "./FoodChoiceNode";
 
 test("takes 2 numbers and multiplies them together", () => {
     expect(totalScoreOfWeightedAttribute(1, 5)).toBe(5);
