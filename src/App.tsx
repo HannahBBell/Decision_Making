@@ -37,10 +37,13 @@ function App() {
   const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState(0)
   const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState(0)
 
-
   //node positioning using window size
   const {width} = useWindowSize()
 
+  //foodNameInput and foodChoiceTotalScore arrays to pass into WinnerNode 
+  const winnerNodeFoodNameInputArray = [foodNameInput1, foodNameInput2, foodNameInput3, foodNameInput4];
+  const winnerNodeFoodChoiceTotalScoreArray = [foodChoice1TotalScore, foodChoice2TotalScore, foodChoice3TotalScore, foodChoice4TotalScore];
+  
   const elements = [
     //AttributeNodes
     {
@@ -102,7 +105,7 @@ function App() {
     {
       id: '9',
       type: 'output',
-      data: { label: <div><WinnerNode foodNameInput1={foodNameInput1} foodNameInput2={foodNameInput2} foodNameInput3={foodNameInput3} foodNameInput4={foodNameInput4} foodChoice1TotalScore={foodChoice1TotalScore} foodChoice2TotalScore={foodChoice2TotalScore} foodChoice3TotalScore={foodChoice3TotalScore} foodChoice4TotalScore={foodChoice4TotalScore}/></div>},
+      data: { label: <div><WinnerNode winnerNodeFoodNameInputArray={winnerNodeFoodNameInputArray} winnerNodeFoodChoiceTotalScoreArray={winnerNodeFoodChoiceTotalScoreArray} /></div>},
       position: { x: width/2 - 95, y: 500 },
     },
     
