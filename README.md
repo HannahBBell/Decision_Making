@@ -1,6 +1,6 @@
 # Decision Making: Food Decider!
 
-## How it works:
+## How it works
 An interactive tool which helps you determine the best food for you based on a weighted total score.
 <br/>
 **All you need to do to get started is:**
@@ -11,8 +11,8 @@ An interactive tool which helps you determine the best food for you based on a w
 <br/>
     **3.** And... BAM! this useful tool spits out the best food based on your choices! 
 <br/>
+<br/>
 It's decision making made easy!
-
 
 ### Link to netlify
 https://decision-making-hbb.netlify.app/
