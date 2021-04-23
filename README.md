@@ -4,10 +4,15 @@
 An interactive tool which helps you determine the best food for you based on a weighted total score.
 <br/>
 All you need to do to get started is:
+<br/>
     1. Add some attributes, assign a weighting to them
+<br/>
     2. Add a food of your choice, assigning the correct scale for each attribute 
+<br/>
     3. BAM! this useful tool spits out the best food based on your choices! 
+<br/>
 It's decision making made easy!
+
 
 ### Link to netlify
 https://decision-making-hbb.netlify.app/
