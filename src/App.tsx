@@ -74,11 +74,6 @@ function App() {
       data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput4} attributeNameInput={attributeNameInput4} setWeightedInput={setWeightedInput4} weightedInput={weightedInput4}/></div>},
       position: { x: width/2 + 220, y: 50 },
     },
-
-    //FoodChoiceNodes
-  //   const foodChoiceNodeAttributeNameInputArray = [attributeNameInput1, attributeNameInput2, attributeNameInput3, attributeNameInput4];
-  // const foodChoiceNodeWeightedInputArray = [weightedInput1, weightedInput2, weightedInput3, weightedInput4];
-
     {
       id: '5',
       type: 'default', 
@@ -154,7 +149,6 @@ function App() {
     height: '1000px',
   }
 
-
   return (
     <div className="App">
       <h1 className="title">
@@ -163,7 +157,6 @@ function App() {
       <p className="intro-text">
         Getting started: Try adding some attributes and foods... 
         <br/>
-        {/* This tool will calculate the BEST food for you based on your selected attributes */}
       </p>
       <p className="tag-line">Decision making made easy! </p>
       <div className="checkbox">

@@ -10,7 +10,6 @@ export function winnerScore(props:iWinnerNode){
     const {winnerNodeFoodNameInputArray, winnerNodeFoodChoiceTotalScoreArray} = props;
     
     let winner = ""
-    
     const winningScore = (Math.max(...winnerNodeFoodChoiceTotalScoreArray))
     
     //When initally loading page - dont want the first (most-left) foodChoiceNode to be assigned winner automatically - when all scores are 0 we want nothing to be diplayed as winner
@@ -35,9 +34,8 @@ export function winnerScore(props:iWinnerNode){
 };
 
 export default function WinnerNode(props:iWinnerNode) {
-
     return(
-        <div>
+        <div className="winner-node">
             Winner
             <br/>
             <div className="winner-name">{winnerScore(props)}</div>

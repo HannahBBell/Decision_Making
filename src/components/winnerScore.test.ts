@@ -5,7 +5,6 @@ const highestNumberIsWinner:iWinnerNode = {
     winnerNodeFoodChoiceTotalScoreArray:[0,80.5,64.5,72.9]
 };
 
-
 const allScoresAreZero:iWinnerNode = {
     winnerNodeFoodNameInputArray:["chicken", "burrito", "sushi", "pizza"],
     winnerNodeFoodChoiceTotalScoreArray:[0,0,0,0]
