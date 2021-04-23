@@ -5,19 +5,8 @@ import FoodChoiceNode from './components/FoodChoiceNode';
 import WinnerNode from './components/WinnerNode';
 import "./App.css"
 import 'react-flow-renderer/dist/style.css';
-
 import {useWindowSize} from 'react-use';
 
-// const Demo = () => {
-//   const {width, height} = useWindowSize();
-
-//   return (
-//     <div>
-//       <div>width: {width}</div>
-//       <div>height: {height}</div>
-//     </div>
-//   );
-//};
 function App() {
 
   //useStates for AttributeNode1
@@ -48,7 +37,9 @@ function App() {
   const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState(0)
   const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState(0)
 
-  const {width, height} = useWindowSize()
+
+  //node positioning using window size
+  const {width} = useWindowSize()
 
   const elements = [
     //AttributeNodes
