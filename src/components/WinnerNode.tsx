@@ -14,7 +14,7 @@ interface iWinnerNode{
 
 export default function WinnerNode(props:iWinnerNode) {
 
-    function winnerScore(){
+    function winnerScore(props:iWinnerNode){
         const {foodChoice1TotalScore, foodChoice2TotalScore, foodChoice3TotalScore, foodChoice4TotalScore, foodNameInput1, foodNameInput2, foodNameInput3, foodNameInput4} = props;
         
         let arrayOfScores:number[] = [];
@@ -51,7 +51,7 @@ export default function WinnerNode(props:iWinnerNode) {
         <div>
             Winner
             <br/>
-            <div className="winner-name">{winnerScore()}</div>
+            <div className="winner-name">{winnerScore(props)}</div>
         </div>  
     )
 }

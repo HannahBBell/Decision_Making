@@ -14,6 +14,11 @@ interface IFoodChoiceNode {
     setFoodChoiceTotalScore: React.Dispatch<React.SetStateAction<number>>;
 } 
 
+ //Does weighted calcs for each attribute
+export function totalScoreOfWeightedAttribute(attributeScore:number, weightedInput:number):number{
+    return attributeScore * weightedInput
+}
+
 export default function FoodChoiceNode(props:IFoodChoiceNode) {
 
     const {weightedInput1, weightedInput2, weightedInput3, weightedInput4, setFoodNameInput, setFoodChoiceTotalScore, attributeNameInput1, attributeNameInput2, attributeNameInput3, attributeNameInput4} = props;
@@ -23,11 +28,7 @@ export default function FoodChoiceNode(props:IFoodChoiceNode) {
     const [attributeScore3, setAttributeScore3] = useState(0);
     const [attributeScore4, setAttributeScore4] = useState(0);
 
-    //Does weighted calcs for each attribute
-    function totalScoreOfWeightedAttribute(attributeScore:number, weightedInput:number):number{
-        return attributeScore * weightedInput
-    }
-
+    //turn into function 
     const sumWeightedAttributeScores = Math.round(((totalScoreOfWeightedAttribute(attributeScore1, weightedInput1) + totalScoreOfWeightedAttribute(attributeScore2, weightedInput2) + totalScoreOfWeightedAttribute(attributeScore3, weightedInput3) + totalScoreOfWeightedAttribute(attributeScore4, weightedInput4)))*100)/100
     
     //updating totalScore useState
