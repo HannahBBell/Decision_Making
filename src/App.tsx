@@ -6,6 +6,18 @@ import WinnerNode from './components/WinnerNode';
 import "./App.css"
 import 'react-flow-renderer/dist/style.css';
 
+import {useWindowSize} from 'react-use';
+
+// const Demo = () => {
+//   const {width, height} = useWindowSize();
+
+//   return (
+//     <div>
+//       <div>width: {width}</div>
+//       <div>height: {height}</div>
+//     </div>
+//   );
+//};
 function App() {
 
   //useStates for AttributeNode1
@@ -36,34 +48,33 @@ function App() {
   const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState(0)
   const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState(0)
 
-  const height = 1000;
-  const width = 1000;
-  
+  const {width, height} = useWindowSize()
+
   const elements = [
     //AttributeNodes
     {
       id: '1',
       type: 'input',
       data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput1} attributeNameInput={attributeNameInput1} setWeightedInput={setWeightedInput1} weightedInput={weightedInput1}/></div>},
-      position: { x: 350, y: 50 },
+      position: { x: width/2 - 410, y: 50 },
     },
     {
       id: '2',
       type: 'input',
       data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput2} attributeNameInput={attributeNameInput2} setWeightedInput={setWeightedInput2} weightedInput={weightedInput2}/></div>},
-      position: { x: 550, y: 50 },
+      position: { x: width/2 - 200, y: 50 },
     },
     {
       id: '3',
       type: 'input',
       data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput3} attributeNameInput={attributeNameInput3} setWeightedInput={setWeightedInput3} weightedInput={weightedInput3}/></div>},
-      position: { x: 750, y: 50 },
+      position: { x: width/2 + 10, y: 50 },
     },
     {
       id: '4',
       type: 'input',
       data: { label: <div><AttributeNode setAttributeNameInput={setAttributeNameInput4} attributeNameInput={attributeNameInput4} setWeightedInput={setWeightedInput4} weightedInput={weightedInput4}/></div>},
-      position: { x: 950, y: 50 },
+      position: { x: width/2 + 220, y: 50 },
     },
 
     //FoodChoiceNodes
@@ -72,28 +83,28 @@ function App() {
       type: 'default', 
       data: { label: 
         <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput1} setFoodChoiceTotalScore={setFoodChoice1TotalScore} /></div>},
-      position: { x: 350, y: 200 },
+      position: { x: width/2 - 410, y: 200 },
     },
     {
       id: '6',
       type: 'default', 
       data: { label: 
         <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput2} setFoodChoiceTotalScore={setFoodChoice2TotalScore}/></div>},
-      position: { x: 550, y: 200 },
+      position: { x: width/2 - 200, y: 200 },
     },
     {
       id: '7',
       type: 'default', 
       data: { label: 
         <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput3} setFoodChoiceTotalScore={setFoodChoice3TotalScore}/></div>},
-      position: { x: 750, y: 200 },
+      position: { x: width/2 + 10, y: 200 },
     },
     {
       id: '8',
       type: 'default', 
       data: { label: 
         <div><FoodChoiceNode attributeNameInput1={attributeNameInput1} attributeNameInput2={attributeNameInput2} attributeNameInput3={attributeNameInput3} attributeNameInput4={attributeNameInput4} weightedInput1={weightedInput1} weightedInput2={weightedInput2} weightedInput3={weightedInput3} weightedInput4={weightedInput4} setFoodNameInput={setFoodNameInput4} setFoodChoiceTotalScore={setFoodChoice4TotalScore}/></div>},
-      position: { x: 950, y: 200 },
+      position: { x: width/2 + 220, y: 200 },
     },
 
     //WinnerNode
@@ -101,7 +112,7 @@ function App() {
       id: '9',
       type: 'output',
       data: { label: <div><WinnerNode foodNameInput1={foodNameInput1} foodNameInput2={foodNameInput2} foodNameInput3={foodNameInput3} foodNameInput4={foodNameInput4} foodChoice1TotalScore={foodChoice1TotalScore} foodChoice2TotalScore={foodChoice2TotalScore} foodChoice3TotalScore={foodChoice3TotalScore} foodChoice4TotalScore={foodChoice4TotalScore}/></div>},
-      position: { x: 650, y: 500 },
+      position: { x: width/2 - 95, y: 500 },
     },
     
     //Line connections
@@ -168,7 +179,7 @@ function App() {
       </div>
       <div>
       </div>
-      <div> 
+      <div className="flex-container"> 
       <ReactFlow elements={elements} nodesDraggable={isDraggable} snapToGrid={true} style={style}/>
       </div>
     </div>

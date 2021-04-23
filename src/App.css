@@ -27,3 +27,8 @@
 .react-flow {
     align-content: center;
   }
+
+.flex-container {
+    display: flex;
+    align-content: center;
+}
