@@ -5,8 +5,6 @@ import FoodChoiceNode from './components/FoodChoiceNode';
 import WinnerNode from './components/WinnerNode';
 import "./App.css"
 import 'react-flow-renderer/dist/style.css';
-// import {elements} from './components/Elements'
-
 
 function App() {
 
@@ -38,6 +36,9 @@ function App() {
   const [foodChoice3TotalScore, setFoodChoice3TotalScore] = useState(0)
   const [foodChoice4TotalScore, setFoodChoice4TotalScore] = useState(0)
 
+  const height = 1000;
+  const width = 1000;
+  
   const elements = [
     //AttributeNodes
     {
@@ -137,8 +138,8 @@ function App() {
 
   const style = {
     background: '#E6F2FF',
-    width: '100%',
-    height: '100%',
+    width: '2000px',
+    height: '1000px',
   }
 
 
@@ -167,7 +168,7 @@ function App() {
       </div>
       <div>
       </div>
-      <div style={{ height: 700 }}> 
+      <div> 
       <ReactFlow elements={elements} nodesDraggable={isDraggable} snapToGrid={true} style={style}/>
       </div>
     </div>
