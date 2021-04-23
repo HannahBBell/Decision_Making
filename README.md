@@ -3,6 +3,7 @@
 ## How it works
 An interactive tool which helps you determine the best food for you based on a weighted total score.
 <br/>
+<br/>
 **All you need to do to get started is:**
 <br/>
     **1.** Add some attributes, assign a weighting to them
